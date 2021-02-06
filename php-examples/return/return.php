@@ -1,10 +1,13 @@
 <?php
 /*
 *
+* Executable example about returning values from a function
+* Intends to be self-explained but i'll probably post and explain it on quartex.net
 *
-* @Package code Snippets
-* @Author thekorko
-* @Link www.quartex.net
+* @package return-example
+* @author thekorko support[AT]quartex.net
+* @ink www.quartex.net
+*
 *
 */
 header('Content-Type: text/html; charset=utf-8'); //header stuff
@@ -19,7 +22,7 @@ function return_example_var() {
   return $var;
 }
 
-//$var = ""; //unnecesary
+
 $var = return_example_var(); //return is suposed to be used this way
 echo "<b>" . $var . "</b>bar <br>"; //echoes our string and puts a linebreak
 
@@ -40,7 +43,7 @@ function return_example_array() {
   return $array;
 }
 
-//$array = array(); //unnecesary
+
 $array = return_example_array(); //stores the returned array into a variable
 print_r($array); //prints array in human readable format for array understanding
 //var_dump($array); debug with this too.
@@ -48,4 +51,5 @@ print_r($array); //prints array in human readable format for array understanding
 echo "<br><b>" . $array[0] . $array[1] . "</b>"; //some concatenation using an array
 
 echo "<br>Happy learning<br><a href='https://quartex.net'>thekorko</a><br>"
+//check out quartex.net
 ?>
