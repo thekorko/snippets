@@ -12,10 +12,6 @@
 */
 header('Content-Type: text/html; charset=utf-8'); //header stuff
 
-if (!ini_get('date.timezone')) {
-	date_default_timezone_set('America/Argentina/Buenos_Aires'); //Set your timezone
-}
-
 //Simple string return function
 function return_example_var() {
   $var = "foo"; //a simple string
