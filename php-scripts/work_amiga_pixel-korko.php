@@ -30,8 +30,7 @@
   */
 
   //groups names used for printing and when we need them for file just strtolower($groups[$i]);
-  //Fullscreen is not a group so every time we use a for loop we need to skip index 0
-  $groups = array('Fullscreen','Latex','Satanic','Phantasy','Pacific','Boozombies','Planet Jazz','Chiperia','Insane','Whelpz','Traktor','Other');
+  $groups = array('Latex','Satanic','Phantasy','Pacific','Boozombies','Planet Jazz','Chiperia','Insane','Whelpz','Traktor','Other');
 
   //Directory path(if would be something like folder/folder2 maybe will require some tweak)
   //it just works "work_amiga_pixel/test/test";
@@ -58,10 +57,9 @@
 
   //It reads for every $index in our list do stuff
   //count is the total count of indexes
-  //Index $i is set to 1 instead of 0 to skip Fullscreen option
-  for ($i=1; $i < count($groups); $i++) : ?>
+  for ($i=0; $i < count($groups); $i++) : ?>
 
-  <li><a href=?img=<?php echo strtolower($groups[$i]); //group name in lowercase is our filename ?>><?php echo $groups[$i] //group name with uppercase?></a>
+  <li><a href=?img=<?php echo preg_replace('/\s+/', '', strtolower($groups[$i])); //group name in lowercase is our filename ?>><?php echo $groups[$i] //group name with uppercase?></a>
 
   <?php
   //would be something like ?img=latex(lowercase)
@@ -72,6 +70,9 @@
   * End of menu
   *
   */
+
+
+  //fix fullscreen
   ?>
   </ul>
 
@@ -112,7 +113,7 @@
     //$clean_Variable = htmlspecialchars($clean_Variable, ENT_QUOTES);
 
     //we check if that filename exists in our data structure(array of textfiles)
-    if (in_array(ucwords($clean_variable), $groups)) {
+    if (in_array(ucwords($clean_variable), $groups) or ($clean_variable == 'fullscreen')) {
 
       //we build a filepath structure
       $filepath = $directory_name . "/" . $clean_variable . $file_format;
