@@ -30,7 +30,8 @@
   */
 
   //groups names used for printing and when we need them for file just strtolower($groups[$i]);
-  $groups = array('Latex','Satanic','Phantasy','Pacific','Boozombies','Planet Jazz','Chiperia','Insane','Whelpz','Traktor','Other');
+  //Fullscreen is not a group so every time we use a for loop we need to skip index 0
+  $groups = array('Fullscreen','Latex','Satanic','Phantasy','Pacific','Boozombies','Planet Jazz','Chiperia','Insane','Whelpz','Traktor','Other');
 
   //Directory path(if would be something like folder/folder2 maybe will require some tweak)
   //it just works "work_amiga_pixel/test/test";
@@ -57,7 +58,8 @@
 
   //It reads for every $index in our list do stuff
   //count is the total count of indexes
-  for ($i=0; $i < count($groups); $i++) : ?>
+  //Index $i is set to 1 instead of 0 to skip Fullscreen option
+  for ($i=1; $i < count($groups); $i++) : ?>
 
   <li><a href=?img=<?php echo strtolower($groups[$i]); //group name in lowercase is our filename ?>><?php echo $groups[$i] //group name with uppercase?></a>
 
@@ -73,7 +75,7 @@
   ?>
   </ul>
 
-  <a href=?img=work_amiga_pixel/fullscreen.txt>Fullscreen</a>
+  <a href=?img=fullscreen>Fullscreen</a>
 
     </td><td valign=top>
 
