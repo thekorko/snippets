@@ -11,12 +11,16 @@
 <meta name="viewport" content="user-scalable=yes, width=device-width" />
 <LINK REL=stylesheet HREF="styles.css">
 </head>
-<?php include("_site_body.inc"); ?>
-<?php include("_site_logo.inc"); ?>
-<?php include("work_menu.inc"); ?>
-<?php include("_comments.php"); ?>
 
-<?php include("_site_main_table_start.inc"); ?><tr><td colspan=2>
+
+<?php
+//commented this out because it does not have anything to do here
+//include("_site_body.inc"); ?>
+<?php //include("_site_logo.inc"); ?>
+<?php //include("work_menu.inc"); ?>
+<?php //include("_comments.php"); ?>
+
+<?php //include("_site_main_table_start.inc"); ?><tr><td colspan=2>
 
 <?PHP
   //So we create a list of groups, in this list we use Uppercase in first letter for displaying
@@ -59,7 +63,7 @@
   //count is the total count of indexes
   for ($i=0; $i < count($groups); $i++) : ?>
 
-  <li><a href=?img=<?php echo preg_replace('/\s+/', '', strtolower($groups[$i])); //group name in lowercase is our filename ?>><?php echo $groups[$i] //group name with uppercase?></a>
+  <li><a href="?img=<?php echo preg_replace('/\s/', '-', strtolower($groups[$i])); //group name in lowercase is our filename ?>"><?php echo $groups[$i] //group name with uppercase?></a>
 
   <?php
   //would be something like ?img=latex(lowercase)
@@ -76,7 +80,7 @@
   ?>
   </ul>
 
-  <a href=?img=fullscreen>Fullscreen</a>
+  <a href="?img=fullscreen">Fullscreen</a>
 
     </td><td valign=top>
 
@@ -113,7 +117,7 @@
     //$clean_Variable = htmlspecialchars($clean_Variable, ENT_QUOTES);
 
     //we check if that filename exists in our data structure(array of textfiles)
-    if (in_array(ucwords($clean_variable), $groups) or ($clean_variable == 'fullscreen')) {
+    if (in_array(ucwords(preg_replace('/[-]/', ' ', $clean_variable)), $groups) or $clean_variable = 'fullscreen') {
 
       //we build a filepath structure
       $filepath = $directory_name . "/" . $clean_variable . $file_format;
