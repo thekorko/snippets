@@ -102,18 +102,29 @@
     //[^A-Za-z\-] alphabetic lower and uppercase, allow -
     //[^A-Za-z0-9\-] alphanumeric lower and uppercase allow -
     //trim is for removing spaces
-    $clean_variable = preg_replace('/[^a-z\-]/', '', trim($dirty_variable));
+    $clean_variable = preg_replace('/[^a-z0-9\-]/', '', trim($dirty_variable));
+    //echo "$clean_variable";
     //debugging echo "The GET variable is" . $clean_variable;
 
     //another way of doing it
     //$clean_Variable = htmlspecialchars($clean_Variable, ENT_QUOTES);
 
     //we check if that filename exists in our data structure(array of textfiles)
-    if (in_array(ucwords(preg_replace('/[-]/', ' ', $clean_variable)), $groups) or in_array($clean_variable, $menus = array('fullscreen','instagram-fillers'))) {
+    $clean_with_spaces = preg_replace('/[-]/', ' ', $clean_variable);
+    $clean_with_spaces_all_caps = strtoupper($clean_with_spaces);
+    //echo "$clean_with_spaces_all_caps";
+
+    function in_array_any($group_names, $array_name) {
+      return !empty(array_intersect($group_names, $array_name));
+    }
+
+    $array_possible = array($clean_variable,$clean_with_spaces,$clean_with_spaces_all_caps,ucwords($clean_with_spaces));
+    $menus = array('fullscreen','instagram-fillers');
+    if (in_array_any($array_possible, $groups ) or in_array($clean_variable, $menus)) {
 
       //we build a filepath structure
       $filepath = $directory_name . "/" . $clean_variable . $file_format;
-
+      //echo "$filepath";
       //we check if the file exists
       if (file_exists($filepath)) {
         //we require said filepath
@@ -127,7 +138,6 @@
       echo " 404 Not found";
     }
   }
-
 /*
 * End of
 * Script for data validation
