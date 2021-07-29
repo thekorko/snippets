@@ -26,6 +26,11 @@
   */
 
   //groups names used for printing and when we need them for file just strtolower($groups[$i]);
+  /*
+  * Groups can be:
+  * Planet Jazz, F4cg, F4CG, Quartex, Quart3x, L4tex, latex
+  * ALL CAPS, all lower, spaces allowed, numbers allowed
+  */
   $groups = array('F4cg','Latex','Other');
 
   //Directory path(if would be something like folder/folder2 maybe will require some tweak)
