@@ -34,7 +34,7 @@
   */
 
   //groups names used for printing and when we need them for file just strtolower($groups[$i]);
-  $groups = array('Latex','Satanic','Phantasy','Pacific','Boozombies','Planet Jazz','Chiperia','Insane','Whelpz','Traktor','Other');
+  $groups = array('Latex','Satanic','Phantasy','Pacific','Boozombies','Planet Jazz','Chiperia','Insane','Whelpz','Traktor','Other','F4CG');
 
   //Directory path(if would be something like folder/folder2 maybe will require some tweak)
   //it just works "work_amiga_pixel/test/test";
