@@ -125,13 +125,14 @@
     function in_array_any($group_names, $array_name) {
       return !empty(array_intersect($group_names, $array_name));
     }
-    $array_possible = array($clean_variable,$clean_with_spaces,$clean_with_spaces_all_caps,ucwords($clean_with_spaces));
 
-    if (in_array_any($array_possible, $groups ) or $clean_variable = 'fullscreen') {
+    $array_possible = array($clean_variable,$clean_with_spaces,$clean_with_spaces_all_caps,ucwords($clean_with_spaces));
+    $menus = array('fullscreen','instagram-fillers');
+    if (in_array_any($array_possible, $groups ) or in_array($clean_variable, $menus)) {
 
       //we build a filepath structure
       $filepath = $directory_name . "/" . $clean_variable . $file_format;
-      echo "$filepath";
+      //echo "$filepath";
       //we check if the file exists
       if (file_exists($filepath)) {
         //we require said filepath
