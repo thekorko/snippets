@@ -7,10 +7,10 @@
 *
 */
 $arguments = array(
-'echo' => true,
-'redirect' => get_permalink( get_the_ID() ),
-'remember' => true,
-'value_remember' => true,
+  'echo' => true,
+  'redirect' => get_permalink( get_the_ID() ),
+  'remember' => true,
+  'value_remember' => true,
 );
 
 wp_login_form( $arguments );
