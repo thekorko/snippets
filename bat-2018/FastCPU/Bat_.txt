@@ -1,0 +1,13 @@
+El problema a resolver era que Windows 8 tardaba muchisimo en ser usable despues de iniciar sesión
+Tenia un HDD en ese entonces.
+Otro problema era que en ese momento tenia dos lineas de internet, una era ADSL que la usaba para descargar cosas y la otra era FTTH de uso diario.
+El script gateway.bat resuelve ese problema me dejaba intercambiar de linea cuando yo lo necesitara.
+
+El conjunto de archivos ejecutaba programas con prioridad de cpu tratando de optimizar el inicio de windows 8
+Faltan unos ejecutables que estaban ubicados en la carpeta appdata
+Usamos accesos directos, una tarea programada y archivos bat para concretar dicha tarea
+Bat_to_exe: Programa utilizado para convertir de .bat a .exe
+
+Algunos comandos de ejecucion
+-silent
+--start-minimized

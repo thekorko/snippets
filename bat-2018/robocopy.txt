@@ -1,0 +1,1 @@
+robocopy "C:\e" "E:\Desktop" /E /COPY:DATSO /XJ /SL /MT:8 /R:10 /W:5 /V /NS /NC /TEE 
