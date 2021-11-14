@@ -1,1 +1,3 @@
-robocopy "C:\e" "E:\Desktop" /E /COPY:DATSO /XJ /SL /MT:8 /R:10 /W:5 /V /NS /NC /TEE 
+Best robocopy command for doing things.
+www.quartex.net
+robocopy "C:\Folder" "E:\Desktop" /E /COPY:DATSO /XJ /SL /MT:8 /R:10 /W:5 /V /NS /NC /TEE 
