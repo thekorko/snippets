@@ -35,7 +35,8 @@ if %command%==d (
   pause
   if %delete%==y ( SET params=-x )
   if %delete%==n ( SET params=-x -k )
-    FOR /F "delims=" %%i in (lista.txt) do (
+  ::No lee este archivo, a veces si, aveces no, la mayoria de las veces tira error en el controlador especificado
+    FOR /F "delims=" %%i in (list.txt) do (
       %programDir%/youtube-dl.exe %keep% --audio-format mp3 %%i
       ::Workaraund because --output in yt-dl isn't working as i need to.
       MOVE %programDir%/*.mp3 %outputDir%
