@@ -48,10 +48,10 @@ Ahi tenes 45 posibilidades, y la inversa son 45 más, sin tener en cuenta que ha
 
 etc…
 
-Expresión Matemática
+**Expresión Matemática**
 
 Es una permutacion con repeticion, n x n
 
-del 0 al 9 hay 10 digitos, y como son dos valores pues , 1010=100 permutaciones posibles
+del 0 al 9 hay 10 digitos, y como son dos valores pues , 10 x 10=100 permutaciones posibles
 
     Gracias a “Carlos” por su aclaración.
