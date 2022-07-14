@@ -2,23 +2,45 @@
 $keys = array("R5M8T-?CMHP-P?BWG","BPQNZ-B??BY-AXTZX","M?NYN-?IYYH-ZG?LD","NQBCN-?WY?A-JRQ98");
 function run_for($parts_of_key,$partN,$key_parts,$part_coincidences) {
   if ($part_coincidences!=1) {
-    str_split($key_parts[$partN]);
-  }
-  for ($i=0; $i < 10; $i++) {
-    $var = str_replace('?',$i,$key_parts[$partN]);
-    echo ("<br>".$var);
-    array_push($parts_of_key[$partN],$var);
-    if ($i==9) {
-      for ($j=9; $j > -1; $j--) {
-        $var = str_replace('?',$j,$key_parts[$partN]);
+    $test = str_split($key_parts[$partN]);
+    for ($letter=0; $letter < count($test) ; $letter++) {
+      if ($test[$letter]!='?') {
+        continue;
+      }
+      for ($i=0; $i < 10; $i++) {
+        $temp = $test;
+        $temp[$letter] = str_replace('?',$i,$test[$letter]);
+        $var = implode($temp);
         echo ("<br>".$var);
         array_push($parts_of_key[$partN],$var);
+        if ($i==9) {
+          for ($j=9; $j > -1; $j--) {
+            $temp = $test;
+            $temp[$letter] = str_replace('?',$j,$test[$letter]);
+            $var = implode($temp);
+            echo ("<br>".$var);
+            array_push($parts_of_key[$partN],$var);
+          }
+        }
+      }
+    }
+  } else {
+    for ($i=0; $i < 10; $i++) {
+      $var = str_replace('?',$i,$key_parts[$partN]);
+      echo ("<br>".$var);
+      array_push($parts_of_key[$partN],$var);
+      if ($i==9) {
+        for ($j=9; $j > -1; $j--) {
+          $var = str_replace('?',$j,$key_parts[$partN]);
+          echo ("<br>".$var);
+          array_push($parts_of_key[$partN],$var);
+        }
       }
     }
   }
 }
 foreach ($keys as $key) {
-  echo "The key in question is: $key<br>";
+  echo "<br>The key in question is: $key<br>";
   $parts_of_key = array(
     array(),
     array(),
