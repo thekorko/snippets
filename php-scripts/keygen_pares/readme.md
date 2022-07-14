@@ -1,4 +1,6 @@
 ** Problema**
+### Por ahora me rindo, el de pares esta aca
+https://github.com/thekorko/snippets/commit/dda5b021a63408f83f6fc3d017b4b99fb7bc7fda
 
 R5M8T-?CMHP-P?BWG
 
