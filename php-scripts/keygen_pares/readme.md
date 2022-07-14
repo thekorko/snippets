@@ -1,8 +1,13 @@
 ** Problema**
+
 R5M8T-?CMHP-P?BWG
+
 BPQNZ-B??BY-AXTZX
+
 M?NYN-?IYYH-ZG?LD
+
 NQBCN-?WY?A-JRQ98
+
 ?=Numero
 
 Idea inicial
