@@ -1,0 +1,13 @@
+{
+  "name"          : "Korko",
+  "id"            : 1,
+  "isProgrammer"  : true,
+  "email"         : null,
+  "languages"     : ["php","js","python","bash"],
+  "address"       : {
+    "street"      : "Groove st",
+    "area-code"   : 313,
+    "country"     : "Argentina",
+    "city"        : "Not Provided",
+  }
+}
