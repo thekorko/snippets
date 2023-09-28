@@ -1,0 +1,1 @@
+D:\ffmpeg.exe -i D:\input.flac -ab 320k -map_metadata 0 -id3v2_version 3 D:\output.mp3
