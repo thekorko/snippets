@@ -1,0 +1,8 @@
+Make symbolic links to free-up space from your ssd
+mklink /j "%APPDATA%\Local\Packages\Spotify" "D:\mklink\Spotify"
+
+mklink /j "%APPDATA%\Roaming\Adobe\Common\Media Cache Files" "D:\mklink\Media Cache Files"
+
+mklink /j "%APPDATA%\Local\FiveM" "D:\mklink\FiveM"
+
+mklink /j "C:\Riot Games" "D:\Riot Games"
